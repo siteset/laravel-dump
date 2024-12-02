@@ -1,0 +1,20 @@
+{
+    "name": "siteset/dump",
+    "description": "Dump database tables with records as JSON",
+    "type": "project",
+    "version": "0.2.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SoftArt Internet Company",
+            "email": "support@softart.ru",
+            "homepage": "http://softart.ru",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Siteset\\Dump\\": "src/"
+        }
+    }
+}
