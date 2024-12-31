@@ -4,9 +4,10 @@ return [
 
 	/*
 	|--------------------------------------------------------------------------
-	| VCS Name
+	| VCS Type to create Ignore Files
 	|--------------------------------------------------------------------------
 	|
+	| Supported systems:
 	| - git
 	|
 	*/
@@ -15,15 +16,28 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Dump Output Path
+    | Dump Output Path 
     |--------------------------------------------------------------------------
     |
-    | The DUMP_DIR variable specifies the name of the seed directory inside database_path.
+    | The DB_DUMP_DIR variable specifies the name of the dump directory inside database_path.
     | You can also change the full path using the --path command-line option.
     |
     */
 
     'path'	=> database_path(env('DB_DUMP_DIR', 'dumps')),
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Seed Input Directory 
+    |--------------------------------------------------------------------------
+    |
+    | The DB_SEED_DIR variable specifies the name of the current 
+    | seed source directory inside dump output path.
+    |
+    */
+
+    'seed'	=> env('DB_SEED_DIR', 'data'),
 
     /*
     |--------------------------------------------------------------------------
@@ -35,8 +49,15 @@ return [
     */
 
     'exclusions' => [
-        'migrations',
-        'password_resets',
+		'cache',
+		'cache_locks',
+		'failed_jobs',
+		'job_batches',
+		'jobs',
+		'migrations',
+		'password_reset_tokens',
+		'personal_access_tokens',
+		'sessions',
     ],
 
 ];
