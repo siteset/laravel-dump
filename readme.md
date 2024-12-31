@@ -1,5 +1,12 @@
 # Dump Database Tables With Records as JSON
 
+## Installation
+Install the package with Composer:
+
+```bash
+composer require siteset/laravel-dump:dev-main
+```
+
 ## Setup
 
 Bind command to application kernel **/app/Console/Kernel.php**
@@ -39,4 +46,5 @@ php artisan db:json
 ```
 
 **JSON** dump will be created at directory **/database/dumps/dump_YYYY-MM-DD_HH-II-SS**
+
 You can change it by options --path and --folder 
