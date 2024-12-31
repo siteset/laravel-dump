@@ -4,7 +4,7 @@
     "description": "Dump database tables with records as JSON for Laravel Framework",
     "keywords": ["php", "laravel", "dump", "database", "json"],
     "homepage": "https://github.com/siteset/laravel-dump",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "authors": [
         {
@@ -22,6 +22,6 @@
         }
     },
     "require": {
-        "php": "^7.0|^8.0"
+        "php": "^7.2 || ^8.0"
     }
 }
