@@ -17,9 +17,11 @@ class Replace
 	{
 		$file = File::get($stub);
 
-		if (null !== $variables)
-			foreach ($variables as $variable => $value)
+		if (null !== $variables) {
+			foreach ($variables as $variable => $value) {
 				$file = str_replace($variable, $value, $file);
+			}
+		}
 
 		return $file;
 	}

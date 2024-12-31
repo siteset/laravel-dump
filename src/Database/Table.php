@@ -55,17 +55,20 @@ class Table
 		$table = new Table($name);
 
 		// Create dump directory
-		if (!File::exists($path))
+		if (! File::exists($path)) {
 			File::makeDirectory($path);
+		}
 
 		// Delete existing dump
-		if (File::exists("{$path}/{$table->name}.json"))
+		if (File::exists("{$path}/{$table->name}.json")) {
 			File::delete("{$path}/{$table->name}.json");
+		}
 
 		// Skipping table data
-		if (true === $skip)
+		if (true === $skip) {
 			// Write an empty file
 			File::put("{$path}/{$table->name}.json", '[]');
+		}
 
 		// Formatted data
 		elseif (false === env('DB_DUMP_MINIFY', false)) {
@@ -167,12 +170,13 @@ class Table
 			->take($this->limit)
 			->get();
 
-		if (!$records->count()) {
+		if (! $records->count()) {
 			$this->offset = 0;
 			return false;
 		}
 
 		$this->offset++;
+
 		return $records;
 	}
 
@@ -183,7 +187,8 @@ class Table
 
 	private function fields()
 	{
-		foreach (DB::select("show columns from `{$this->name}`") as $field)
+		foreach (DB::select("show columns from `{$this->name}`") as $field) {
 			$this->fields[] = new Field($field->Field);
+		}
 	}
 }

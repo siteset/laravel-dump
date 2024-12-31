@@ -17,12 +17,14 @@ class Git implements \Siteset\Dump\Contracts\Vcs
 	public function ignore($path)
 	{
 		// Directory absent
-		if (!File::exists("{$path}"))
+		if (! File::exists("{$path}")) {
 			return;
+		}
 
 		// File present
-		if (File::exists("{$path}/.gitignore"))
+		if (File::exists("{$path}/.gitignore")) {
 			return;
+		}
 
 		// Writing the contents of the ignore file
 		File::put(

@@ -70,17 +70,18 @@ class DumpCommand extends Command
 		$folder	= filled($this->option('folder')) ? $this->option('folder')	: 'dump_' . $this->date->format('Y-m-d_H-i-s');
 
 		// Create base dumps directory if it's not exist
-		if (!File::exists($path))
+		if (! File::exists($path)) {
 			File::makeDirectory($path);
+		}
 
 		// Glue the path name to current dump
-		$dir    = Str::of($path . $folder)->finish(DIRECTORY_SEPARATOR);
+		$dir = Str::of($path . $folder)->finish(DIRECTORY_SEPARATOR);
 
 		// Read table names from schema and make dump for each of them, except excluded names
 		foreach (DB::select('show tables') as $row) {
 			$name = current((array)$row);
 
-			if (true === in_array($name, config('dump.exclusions', []))) {
+			if (in_array($name, config('dump.exclusions', []))) {
 				continue;
 			}
 
