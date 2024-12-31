@@ -1,10 +1,18 @@
 # Dump Database Tables With Records as JSON
 
 ## Installation
-Install the package with Composer:
 
+Add the package record to the 'require' section of the composer.json file.
+```json
+    "require": {
+    	...,
+        "siteset/laravel-dump": "^1.0@dev"
+    },
+```
+
+Update the package with Composer:
 ```bash
-composer require siteset/laravel-dump:dev-main
+composer update siteset/laravel-dump
 ```
 
 ## Setup
