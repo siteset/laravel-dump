@@ -1,7 +1,7 @@
 {
-    "name": "siteset/dump",
+    "name": "siteset/laravel-dump",
     "type": "library",
-    "description": "Dump database tables with records as JSON",
+    "description": "Dump database tables with records as JSON for Laravel Framework",
     "keywords": ["php", "laravel", "dump", "database", "json"],
     "homepage": "https://github.com/siteset/laravel-dump",
     "version": "1.0.0",
