@@ -1,20 +1,29 @@
 {
     "name": "siteset/dump",
+    "type": "library",
     "description": "Dump database tables with records as JSON",
-    "type": "project",
-    "version": "0.2.1",
+    "keywords": ["php", "laravel", "dump", "database", "json"],
+    "homepage": "https://github.com/siteset/laravel-dump",
+    "version": "1.0.0",
     "license": "MIT",
     "authors": [
         {
-            "name": "SoftArt Internet Company",
-            "email": "support@softart.ru",
-            "homepage": "http://softart.ru",
-            "role": "Developer"
+            "name": "Alexey Glumov",
+            "email": "alexey@softart.ru"
+        },
+        {
+            "name": "Anton Poletayev",
+            "email": "anton@softart.ru"
         }
     ],
     "autoload": {
         "psr-4": {
             "Siteset\\Dump\\": "src/"
         }
-    }
+    },
+    "require": {
+        "php": "^7.0",
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
